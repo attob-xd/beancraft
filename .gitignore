@@ -1,0 +1,6 @@
+# The single-file offline build is ~22 MB and is regenerated every compile.
+# Committing it doubles the repo and adds a fresh blob to history each push.
+Eaglercraft_1.12.2_WASM_Offline_Download.html
+
+Thumbs.db
+.DS_Store
