@@ -1,0 +1,13 @@
+{
+ "build": "1790950385",
+ "date": "October 2, 2026",
+ "notes": [
+  "Doors: opening a door on a server no longer turns its top half into a second bottom half.",
+  "Beds: you lie down and get the sleep screen on servers, and sleeping skips the night.",
+  "Jukeboxes play music now - every disc, including Pigstep and otherside. A disc downloads the first time you play it.",
+  "Crafting 4 logs gives real Wood blocks instead of a purple and black block, and they keep their bark when placed.",
+  "Lilac, rose bush, tall grass and large fern show their top half on servers.",
+  "Buttons and levers placed on the floor stay on the floor instead of sticking to a wall.",
+  "The game updates itself: when a new version is out you get a warning, your world is saved, and the page reloads. These notes show after each update."
+ ]
+}
