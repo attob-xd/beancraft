@@ -1,9 +1,10 @@
 {
- "build": "1791212887",
+ "build": "1791222663",
  "date": "October 5, 2026",
  "notes": [
-  "Resource packs made for 1.13 to 1.18.2 work now: their textures are found under the new names by themselves.",
-  "Client Mods: minimap, keystrokes, info HUD, armor HUD, AppleSkin, fullbright, toggle sprint and sneak, ping numbers, no hurt shake and low fire. Turn them on in Mods > Client Mods, or press Right Shift in game.",
-  "Sodium-style Video Settings with General, Quality, Performance and Advanced pages, plus particle culling and an Entity Distance slider."
+  "New Mods screen: every mod in a list on the left, and on the right its picture, what it does and an Enable button. Search at the top; Right Shift opens it in game.",
+  "Fresh Animations (by FreshLX) is a mod now: turn it on in Mods and the mobs blink, breathe, look around and get new walking and attacking animations. The client runs its OptiFine models itself.",
+  "Player Locator: turn on Share My Location in Mods and your friends see your head, name and distance on screen and on the minimap, anywhere in the world. Off until you turn it on.",
+  "Sodium is a mod you can turn off now, which brings back the classic Video Settings."
  ]
 }

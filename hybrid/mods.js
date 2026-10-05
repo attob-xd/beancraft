@@ -20,7 +20,8 @@
  *   ModAPI.setSetting(name, value)        gamma, fov, sensitivity, renderDistance, hideGUI
  *   ModAPI.setSprinting(true/false)
  *
- * A "// @name Something" line in the file names the mod in the list.
+ * A "// @name Something" line in the file names the mod in the list; "// @description ..." and
+ * "// @author ..." lines fill in its page on the Mods screen.
  */
 (function () {
 	const STORE = "hybrid.mods";
@@ -178,6 +179,8 @@
 
 	const EXAMPLE = [
 		"// @name Coordinates + Fullbright (example)",
+		"// @description An example of what a mod can do: your coordinates on the HUD, and G toggles fullbright.",
+		"// @author beancraft",
 		"// Shows your position in the top-left corner; G toggles fullbright.",
 		"let bright = false;",
 		"ModAPI.addEventListener(\"update\", function () {",
@@ -193,6 +196,12 @@
 		"});",
 		""
 	].join("\n");
+
+	/** "// @description ..." and "// @author ..." lines, for the Mods screen */
+	function metaOf(code, key) {
+		const m = new RegExp("//\\s*@" + key + "\\s+(.+)").exec(code || "");
+		return m ? m[1].trim().slice(0, 300) : "";
+	}
 
 	function nameOf(code, fallback) {
 		const m = /\/\/\s*@name\s+(.+)/.exec(code);
@@ -233,6 +242,7 @@
 			return JSON.stringify(readMods().map(function (mod) {
 				const r = running[mod.name];
 				return { name: mod.name, enabled: !!mod.enabled,
+					description: metaOf(mod.code, "description"), author: metaOf(mod.code, "author"),
 					status: !mod.enabled ? "Off" : r ? (r.error ? "Error: " + r.error : "Running") : "Starts after reload",
 					error: !!(r && r.error) };
 			}));
