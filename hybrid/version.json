@@ -1,5 +1,10 @@
 {
  "build": "1791223488",
  "date": "October 5, 2026",
- "notes": []
+ "notes": [
+  "New Mods screen: every mod in a list on the left, and on the right its picture, what it does and an Enable button. Search at the top; Right Shift opens it in game.",
+  "Fresh Animations (by FreshLX) is a mod now: turn it on in Mods and the mobs blink, breathe, look around and get new walking and attacking animations. The client runs its OptiFine models itself.",
+  "Player Locator: turn on Share My Location in Mods and your friends see your head, name and distance on screen and on the minimap, anywhere in the world. Off until you turn it on.",
+  "Sodium is a mod you can turn off now, which brings back the classic Video Settings."
+ ]
 }
