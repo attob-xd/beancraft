@@ -1,7 +1,9 @@
 {
- "build": "1791201921",
+ "build": "1791207624",
  "date": "October 5, 2026",
  "notes": [
+  "Voices behind walls sound muffled, like hearing someone through a door - more walls, more muffled.",
+  "The talking icon is smaller and sits right of the player's name.",
   "Voice chat actually works now - before, you could join voice but nobody ever heard anyone.",
   "Voice chat now travels through the game's own connection on servers that have the new voice relay, so it works on school Wi-Fi and other networks that used to block it.",
   "New voice chat screen, like Simple Voice Chat: press V. Turn voice on, pick Nearby or Global, mute your mic, turn voice chat off, hide the icons, or mute a player.",

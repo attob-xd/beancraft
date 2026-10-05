@@ -154,13 +154,20 @@
 		var c = audio();
 		s = { id: id, next: 0, last: 0, ts: 0 };
 		s.gain = c.createGain();
+		// behind walls: a low-pass filter (and a little quieter), like hearing someone through a door
+		s.filter = c.createBiquadFilter();
+		s.filter.type = "lowpass";
+		s.filter.frequency.value = 20000;
+		s.filter.Q.value = 0.7;
+		s.walls = 0;
 		s.panner = c.createPanner();
 		s.panner.panningModel = "equalpower";
 		s.panner.distanceModel = "linear"; // fades out evenly to silence at the server's voice distance, like SVC
 		s.panner.refDistance = 1;
 		s.panner.maxDistance = distance;
 		s.panner.rolloffFactor = 1;
-		s.gain.connect(s.panner);
+		s.gain.connect(s.filter);
+		s.filter.connect(s.panner);
 		s.panner.connect(master);
 		s.dec = new AudioDecoder({
 			output: function (ad) {
@@ -221,6 +228,19 @@
 		}
 	}
 
+	// blocks between you and the speaker -> [low-pass cutoff Hz, volume]: none, one (a door), two, three or more
+	var MUFFLE = [[20000, 1], [1400, 0.8], [750, 0.62], [420, 0.5]];
+
+	function setWalls(s, walls) {
+		walls = Math.max(0, Math.min(3, walls | 0));
+		if (walls === s.walls) return;
+		s.walls = walls;
+		var t = ctx.currentTime;
+		// glide over ~0.1 s so walking past a doorway does not click
+		s.filter.frequency.setTargetAtTime(MUFFLE[walls][0], t, 0.05);
+		s.gain.gain.setTargetAtTime(MUFFLE[walls][1], t, 0.05);
+	}
+
 	function setListener(me) {
 		var L = ctx.listener;
 		var yaw = me[3] * Math.PI / 180, pitch = me[4] * Math.PI / 180;
@@ -244,7 +264,7 @@
 			return support === true;
 		},
 
-		// state: { on, talk, vol, deaf, dist, muted: [ids], me: [x,y,z,yaw,pitch], p: { id: [x,y,z] } }
+		// state: { on, talk, vol, deaf, dist, muted: [ids], me: [x,y,z,yaw,pitch], p: { id: [x,y,z,walls] } }
 		// answer: { a: base64 batch of Opus frames to send, s: [ids heard in the last 300 ms] }
 		tick: function (json) {
 			var st;
@@ -295,6 +315,7 @@
 					// someone not in sight (Global, far away) plays from where you stand: no direction, full volume
 					if (p) setPos(s.panner, p[0], p[1], p[2]);
 					else if (st.me) setPos(s.panner, st.me[0], st.me[1], st.me[2]);
+					setWalls(s, p ? p[3] : 0);
 					if (now - s.last < 300 && !muted[id]) res.s.push(id);
 					if (now - s.last > 60000) {
 						try { if (s.dec) s.dec.close(); s.panner.disconnect(); } catch (e) {}
