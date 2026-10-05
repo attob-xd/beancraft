@@ -1,15 +1,9 @@
 {
- "build": "1791207624",
+ "build": "1791212887",
  "date": "October 5, 2026",
  "notes": [
-  "Voices behind walls sound muffled, like hearing someone through a door - more walls, more muffled.",
-  "The talking icon is smaller and sits right of the player's name.",
-  "Voice chat actually works now - before, you could join voice but nobody ever heard anyone.",
-  "Voice chat now travels through the game's own connection on servers that have the new voice relay, so it works on school Wi-Fi and other networks that used to block it.",
-  "New voice chat screen, like Simple Voice Chat: press V. Turn voice on, pick Nearby or Global, mute your mic, turn voice chat off, hide the icons, or mute a player.",
-  "Hold Caps Lock to talk, or pick Voice activation in the voice settings to just talk (Chromebooks and Macs start on that). Settings also has a mic test and a level bar for setting how loud you need to be.",
-  "A speaker shows over the head of whoever is talking, and your mic state shows in the bottom left corner.",
-  "Voice keys: V menu, Caps Lock talk, M mute, N voice off, H hide icons - change them in Controls under Voice Chat.",
-  "Voice chat stays on for the next server once you turn it on. If your browser blocks the microphone you can still listen."
+  "Resource packs made for 1.13 to 1.18.2 work now: their textures are found under the new names by themselves.",
+  "Client Mods: minimap, keystrokes, info HUD, armor HUD, AppleSkin, fullbright, toggle sprint and sneak, ping numbers, no hurt shake and low fire. Turn them on in Mods > Client Mods, or press Right Shift in game.",
+  "Sodium-style Video Settings with General, Quality, Performance and Advanced pages, plus particle culling and an Entity Distance slider."
  ]
 }
