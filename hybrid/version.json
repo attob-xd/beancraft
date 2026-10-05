@@ -1,5 +1,11 @@
 {
- "build": "1790960832",
- "date": "October 2, 2026",
- "notes": []
+ "build": "1791160946",
+ "date": "October 4, 2026",
+ "notes": [
+  "Voice chat: press Esc on a server and pick Nearby or Global in the top right. Hold V to talk.",
+  "Emoji: type :sob: :skull: :fire: :heart: and 100 more in chat and they turn into emoji, drawn in Minecraft's own font.",
+  "Mods: a new Mods button on the title screen. Add JavaScript mods from a file or a link, turn them on or off, or try the example mod.",
+  "Edit Profile: Import/Export works now - back up your skin, settings and servers to a file and load them back.",
+  "Edit Profile keeps your changes if the window is resized while you are editing."
+ ]
 }

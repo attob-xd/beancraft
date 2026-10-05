@@ -10,9 +10,10 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Minecraft 1.18.2" />
 		<meta property="og:description" content="Play Minecraft 1.18.2 in your browser" />
-		<meta property="og:image" content="favicon.png?v=1790960832" />
-		<link type="image/png" rel="shortcut icon" href="favicon.png?v=1790960832" />
-		<script type="text/javascript" src="bootstrap.js?v=1790960832"></script>
+		<meta property="og:image" content="favicon.png?v=1791160946" />
+		<link type="image/png" rel="shortcut icon" href="favicon.png?v=1791160946" />
+		<script type="text/javascript" src="bootstrap.js?v=1791160946"></script>
+		<script type="text/javascript" src="mods.js?v=1791160946"></script>
 		<script type="text/javascript">
 			"use strict";
 			// hybrid: updates. Once a minute (and when the tab comes back) version.json is read; if its build is not
@@ -20,7 +21,7 @@
 			// leaves the world, then answers "hybrid:reload" and the page reloads. The new page shows the patch
 			// notes once. deploy_beancraft.py writes version.json and stamps HYBRID_BUILD.
 			window.hybridUpdate = (function() {
-				var HYBRID_BUILD = "1790960832";
+				var HYBRID_BUILD = "1791160946";
 				var pending = null;
 				function store(kind, key, value) {
 					try {
@@ -113,8 +114,10 @@
 				// skipped by the copy but still found by the game, which looks them up by name.
 				var hooks = {};
 				Object.defineProperty(hooks, "localStorageLoaded", { enumerable: false, value: function(key) {
-					// called for real storage keys too: anything not "hybrid:" must return null
-					return key === "hybrid:update" ? pending : null;
+					// called for real storage keys too: anything not "hybrid:" or "mod:" must return null
+					if(key === "hybrid:update") return pending;
+					if(key.lastIndexOf("mod:", 0) === 0) return window.hybridMods ? window.hybridMods.handle(key.substring(4)) : null;
+					return null;
 				} });
 				Object.defineProperty(hooks, "localStorageSaved", { enumerable: false, value: function(key) {
 					if(key === "hybrid:reload" && pending) {
@@ -139,7 +142,7 @@
 					window.eaglercraftXOpts = {
 						demoMode: false,
 						container: "game_frame",
-						assetsURI: "assets.epw?v=1790960832",
+						assetsURI: "assets.epw?v=1791160946",
 						worldsDB: "worlds_hybrid",
 						hooks: window.hybridUpdate.hooks,
 						servers: [
