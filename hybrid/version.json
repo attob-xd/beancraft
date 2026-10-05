@@ -1,11 +1,12 @@
 {
- "build": "1791160946",
- "date": "October 4, 2026",
+ "build": "1791177171",
+ "date": "October 5, 2026",
  "notes": [
-  "Voice chat: press Esc on a server and pick Nearby or Global in the top right. Hold V to talk.",
-  "Emoji: type :sob: :skull: :fire: :heart: and 100 more in chat and they turn into emoji, drawn in Minecraft's own font.",
-  "Mods: a new Mods button on the title screen. Add JavaScript mods from a file or a link, turn them on or off, or try the example mod.",
-  "Edit Profile: Import/Export works now - back up your skin, settings and servers to a file and load them back.",
-  "Edit Profile keeps your changes if the window is resized while you are editing."
+  "Voice chat actually works now - before, you could join voice but nobody ever heard anyone.",
+  "New voice chat screen, like Simple Voice Chat: press V. Turn voice on, pick Nearby or Global, mute your mic, turn voice chat off, hide the icons, or mute a player.",
+  "Hold Caps Lock to talk, or pick Voice activation in the voice settings to just talk (Chromebooks and Macs start on that). Settings also has a mic test and a level bar for setting how loud you need to be.",
+  "A speaker shows over the head of whoever is talking, and your mic state shows in the bottom left corner.",
+  "Voice keys: V menu, Caps Lock talk, M mute, N voice off, H hide icons - change them in Controls under Voice Chat.",
+  "Voice chat stays on for the next server once you turn it on. If your browser blocks the microphone you can still listen."
  ]
 }
