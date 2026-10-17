@@ -291,7 +291,49 @@
 		case "reload":
 			setTimeout(function () { window.location.reload(); }, 50);
 			return "ok";
+		// ---- the built-in benchmark (HybridBench): ?bench, ?bench=shaders, &rd=N
+		case "bench": {
+			const q = new URLSearchParams(window.location.search);
+			if (!q.has("bench")) return null;
+			bench.state = "running";
+			return JSON.stringify({ mode: q.get("bench") || "vanilla", rd: parseInt(q.get("rd") || "8", 10) });
+		}
+		case "benchshot":
+			bench.shot = arg;
+			++bench.shots;
+			return "ok";
+		case "benchresult": {
+			try { bench.result = JSON.parse(arg); } catch (e) { return "bad"; }
+			bench.result.userAgent = navigator.userAgent;
+			bench.result.deviceMemoryGB = navigator.deviceMemory || null;
+			bench.result.cpuThreads = navigator.hardwareConcurrency || null;
+			bench.result.gpu = gpuName();
+			const boot = document.querySelector('script[src*="bootstrap.js"]');
+			const v = boot && /[?&]v=(\d+)/.exec(boot.src);
+			bench.result.build = v ? v[1] : "dev";
+			bench.state = "done";
+			console.log("[BENCH] " + JSON.stringify(bench.result));
+			try { window.localStorage.setItem("hybrid.benchLast", JSON.stringify(bench.result)); } catch (e) { }
+			return "ok";
+		}
 		default:
+			return null;
+		}
+	}
+
+	/** read by bench/run_bench.py: state "idle" | "running" | "done", the last held pose, and the results */
+	const bench = { state: "idle", shot: null, shots: 0, result: null };
+	window.hybridBench = bench;
+
+	/** the GPU's name, from the game's own WebGL context (it exists by the time a benchmark finishes) */
+	function gpuName() {
+		try {
+			const c = document.querySelector("canvas");
+			const gl = c && c.getContext("webgl2");
+			if (!gl) return null;
+			const ext = gl.getExtension("WEBGL_debug_renderer_info");
+			return ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
+		} catch (e) {
 			return null;
 		}
 	}
