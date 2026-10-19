@@ -1,5 +1,9 @@
 {
  "build": "1792430786",
  "date": "October 19, 2026",
- "notes": []
+ "notes": [
+  "Sodium's real Video Settings: the same menu Sodium 0.4.1 has, taken from the mod itself - General, Quality, Performance and Advanced, every option with Sodium's own description and performance impact, Undo and Apply. Shift+P opens the old Video Settings.",
+  "New Sodium options that really work: Weather and Leaves quality, Biome Blend, Vignette, Fog Occlusion, Entity Culling, Always Defer Chunk Updates, and Use Block Face Culling - the sides of blocks facing away from you aren't drawn any more, so the world is less work for your computer.",
+  "With Iris on, Sodium's menu also has a Shader Packs... tab, Max Shadow Distance (lower it for more speed with shadows) and Color Space."
+ ]
 }
