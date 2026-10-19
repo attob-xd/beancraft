@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;background-color:black;">
+	<head>
+		<meta charset="UTF-8" /><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="description" content="Play Minecraft 1.18.2 in your browser" />
+		<meta name="keywords" content="minecraft, 1.18, 1.18.2" />
+		<title>Minecraft 1.18.2 - beancraft hybrid (Shaders)</title>
+		<meta property="og:locale" content="en-US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Minecraft 1.18.2" />
+		<meta property="og:description" content="Play Minecraft 1.18.2 in your browser" />
+		<meta property="og:image" content="favicon.png?v=1792369523" />
+		<link type="image/png" rel="shortcut icon" href="favicon.png?v=1792369523" />
+		<script type="text/javascript" src="bootstrap.js?v=1792369523"></script>
+		<script type="text/javascript" src="mods.js?v=1792369523"></script>
+		<script type="text/javascript" src="voice-relay.js?v=1792369523"></script>
+		<script type="text/javascript">
+			"use strict";
+			// hybrid: updates. Once a minute (and when the tab comes back) version.json is read; if its build is not
+			// this page's, the game is told through the "hybrid:update" storage hook, warns the player, saves and
+			// leaves the world, then answers "hybrid:reload" and the page reloads. The new page shows the patch
+			// notes once. deploy_beancraft.py writes version.json and stamps HYBRID_BUILD.
+			window.hybridUpdate = (function() {
+				var HYBRID_BUILD = "1792369523";
+				var pending = null;
+				function store(kind, key, value) {
+					try {
+						if(value === undefined) return window[kind].getItem(key);
+						window[kind].setItem(key, value);
+					}catch(e) {
+					}
+					return null;
+				}
+				function fetchVersion() {
+					return fetch("version.json?t=" + Date.now(), { cache: "no-store" }).then(function(r) {
+						return r.ok ? r.json() : null;
+					}).catch(function() {
+						return null;
+					});
+				}
+				function check() {
+					if(pending) return;
+					fetchVersion().then(function(v) {
+						if(!v || !v.build || v.build === HYBRID_BUILD) return;
+						// a cache that keeps serving the old page must not cause a reload loop
+						if(store("sessionStorage", "hybrid.reloadedFor.shaders") === v.build) {
+							console.warn("hybrid: version " + v.build + " is out but this page is still " + HYBRID_BUILD);
+							return;
+						}
+						pending = v.build;
+						console.log("hybrid: update " + HYBRID_BUILD + " -> " + pending + ", waiting for the game to save");
+					});
+				}
+				function showNotes(v) {
+					var wrap = document.createElement("div");
+					wrap.style.cssText = "position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;"
+						+ "background:rgba(0,0,0,0.55);padding:16px;box-sizing:border-box;font-family:system-ui,sans-serif;";
+					var box = document.createElement("div");
+					box.style.cssText = "width:100%;max-width:520px;max-height:85vh;overflow:auto;box-sizing:border-box;padding:20px 22px;"
+						+ "background:#1d1d22;color:#ececf0;border:2px solid #4a4a55;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,0.6);";
+					var h = document.createElement("div");
+					h.textContent = "What's new";
+					h.style.cssText = "font-size:22px;font-weight:700;margin-bottom:2px;";
+					var d = document.createElement("div");
+					d.textContent = v.date ? "Updated " + v.date : "";
+					d.style.cssText = "font-size:13px;opacity:0.65;margin-bottom:12px;";
+					var ul = document.createElement("ul");
+					ul.style.cssText = "margin:0 0 18px;padding-left:20px;line-height:1.5;font-size:15px;";
+					for(var i = 0; i < v.notes.length; ++i) {
+						var li = document.createElement("li");
+						li.textContent = v.notes[i];
+						li.style.marginBottom = "4px";
+						ul.appendChild(li);
+					}
+					var ok = document.createElement("button");
+					ok.textContent = "Play";
+					ok.style.cssText = "display:block;width:100%;padding:10px;font-size:16px;font-weight:600;color:#fff;background:#2fa36b;"
+						+ "border:0;border-radius:8px;cursor:pointer;";
+					function close() {
+						store("localStorage", "hybrid.seenBuild.shaders", HYBRID_BUILD);
+						if(wrap.parentNode) wrap.parentNode.removeChild(wrap);
+					}
+					ok.addEventListener("click", close);
+					wrap.addEventListener("keydown", function(e) {
+						if(e.key === "Enter" || e.key === "Escape") close();
+						e.stopPropagation();
+					});
+					box.appendChild(h); box.appendChild(d); box.appendChild(ul); box.appendChild(ok);
+					wrap.appendChild(box);
+					// on <html>, not the game's container: the runtime owns <body>
+					document.documentElement.appendChild(wrap);
+					ok.focus({ preventScroll: true }); // a plain focus scrolled the list to the bottom on short screens
+				}
+				function start() {
+					if(store("localStorage", "hybrid.seenBuild.shaders") !== HYBRID_BUILD) {
+						fetchVersion().then(function(v) {
+							if(!v || v.build !== HYBRID_BUILD || !v.notes || !v.notes.length) return;
+							// wait for the game itself, so the notes never cover the site's password prompt
+							var wait = setInterval(function() {
+								if(document.querySelector("canvas")) {
+									clearInterval(wait);
+									showNotes(v);
+								}
+							}, 500);
+						});
+					}
+					setInterval(check, 60000);
+					document.addEventListener("visibilitychange", function() {
+						if(document.visibilityState === "visible") check();
+					});
+				}
+				// The hooks are non-enumerable on purpose: starting a singleplayer world posts eaglercraftXOpts to a
+				// Worker, and a function there is a DataCloneError that crashes the game. Non-enumerable properties are
+				// skipped by the copy but still found by the game, which looks them up by name.
+				var hooks = {};
+				Object.defineProperty(hooks, "localStorageLoaded", { enumerable: false, value: function(key) {
+					// called for real storage keys too: anything not "hybrid:" or "mod:" must return null
+					if(key === "hybrid:update") return pending;
+					if(key.lastIndexOf("mod:", 0) === 0) return window.hybridMods ? window.hybridMods.handle(key.substring(4)) : null;
+					return null;
+				} });
+				Object.defineProperty(hooks, "localStorageSaved", { enumerable: false, value: function(key) {
+					if(key === "hybrid:reload" && pending) {
+						store("sessionStorage", "hybrid.reloadedFor.shaders", pending);
+						window.location.reload();
+					}
+				} });
+				return {
+					start: start,
+					check: check,
+					hooks: hooks
+				};
+			})();
+			window.addEventListener("load", function() {
+				if(window.location.href.indexOf("file:") === 0) {
+					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				}else {
+					
+					// %%%%%%%%% launch options %%%%%%%%%%%%
+					
+					var relayId = Math.floor(Math.random() * 3);
+					window.eaglercraftXOpts = {
+						demoMode: false,
+						container: "game_frame",
+						assetsURI: "assets.epw?v=1792369523",
+						worldsDB: "worlds_hybrid",
+						hooks: window.hybridUpdate.hooks,
+						servers: [
+							/* example: { addr: "ws://localhost:8081/", name: "Local test server" } */
+						],
+						relays: [
+							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },
+							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId == 1 },
+							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId == 2 }
+						]
+					};
+					
+					// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+					
+					var q = window.location.search;
+					if((typeof q === "string") && q[0] === "?" && (typeof window.URLSearchParams !== "undefined")) {
+						q = new window.URLSearchParams(q);
+						var s = q.get("server");
+						if(s) window.eaglercraftXOpts.joinServer = s;
+						// Fork addition: test harness. ?user= presets the username and ?cape=
+						// loads a cape from a URL, so an automated multi-client cape test needs
+						// no typing and no native file picker.
+						var u = q.get("user");
+						if(u) window.eaglercraftXOpts.autoUsername = u;
+						var c = q.get("cape");
+						if(c) window.eaglercraftXOpts.autoCapeURL = c;
+					}
+
+					window.hybridUpdate.start();
+
+					// %%%%%%%%% access gate %%%%%%%%%%%%
+					// Asks for a password once per browser, then remembers. This is a soft
+					// gate for keeping casual visitors out, NOT security: it runs entirely
+					// in the browser, so anyone who views source or edits localStorage can
+					// walk straight past it.
+					var ACCESS_PASSWORD = "AB12!";
+					var ACCESS_KEY = "_client_access_ok";
+
+					function alreadyUnlocked() {
+						try { return window.localStorage.getItem(ACCESS_KEY) === "1"; }
+						catch(e) { return false; }
+					}
+
+					function rememberUnlocked() {
+						try { window.localStorage.setItem(ACCESS_KEY, "1"); } catch(e) {}
+					}
+
+					function showGate(onPass) {
+						var wrap = document.createElement("div");
+						wrap.style.cssText = "position:fixed;inset:0;z-index:9999;background:#101014;"
+							+ "display:flex;align-items:center;justify-content:center;"
+							+ "font-family:system-ui,sans-serif;color:#e8e8ea;";
+						var box = document.createElement("div");
+						box.style.cssText = "text-align:center;max-width:320px;padding:28px;";
+						var title = document.createElement("div");
+						title.textContent = "Enter password";
+						title.style.cssText = "font-size:20px;margin-bottom:14px;";
+						var input = document.createElement("input");
+						input.type = "password";
+						input.autocomplete = "off";
+						input.style.cssText = "width:100%;padding:10px 12px;font-size:16px;border-radius:6px;"
+							+ "border:1px solid #3a3a42;background:#1b1b21;color:#fff;box-sizing:border-box;";
+						var err = document.createElement("div");
+						err.style.cssText = "color:#ff6b6b;font-size:13px;height:18px;margin-top:8px;";
+						var btn = document.createElement("button");
+						btn.textContent = "Enter";
+						btn.style.cssText = "margin-top:10px;width:100%;padding:10px;font-size:16px;"
+							+ "border:0;border-radius:6px;background:#4a7dff;color:#fff;cursor:pointer;";
+						function submit() {
+							if(input.value === ACCESS_PASSWORD) {
+								rememberUnlocked();
+								wrap.parentNode.removeChild(wrap);
+								onPass();
+							}else {
+								err.textContent = "Wrong password";
+								input.value = "";
+								input.focus();
+							}
+						}
+						btn.addEventListener("click", submit);
+						input.addEventListener("keydown", function(e) {
+							if(e.key === "Enter") submit();
+						});
+						box.appendChild(title); box.appendChild(input);
+						box.appendChild(err); box.appendChild(btn);
+						wrap.appendChild(box);
+						document.body.appendChild(wrap);
+						input.focus();
+					}
+
+					if(alreadyUnlocked()) {
+						main();
+					}else {
+						showGate(main);
+					}
+					
+				}
+			});
+		</script>
+	</head>
+	<body style="margin:0px;width:100%;height:100%;overflow:hidden;background-color:black;" id="game_frame"></body>
+</html>

@@ -15,6 +15,9 @@
     text-decoration: none; color: #fff; font-size: 30px; font-weight: 600; border-radius: 10px;
     background: #4a7dff; transition: transform .15s, filter .15s; }
   a.ver.hybrid { background: #2fa36b; }
+  a.ver.shaders { background: #8a55e8; }
+  a.ver .tag { display: block; margin-top: 4px; font-size: 14px; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; opacity: .85; }
   a.ver:hover, a.ver:focus { transform: translateY(-2px); filter: brightness(1.1); outline: none; }
 </style>
 </head>
@@ -23,6 +26,7 @@
   <div class="buttons">
     <a class="ver" id="classic" href="classic.html">1.12.2</a>
     <a class="ver hybrid" id="hybrid" href="hybrid/">1.18.2</a>
+    <a class="ver shaders" id="shaders" href="hybrid-shaders/">1.18.2 Shaders<span class="tag">Experimental</span></a>
   </div>
 </div>
 <script>
@@ -32,6 +36,8 @@
   var q = window.location.search || "";
   document.getElementById("classic").href = "classic.html" + q;
   document.getElementById("hybrid").href = "hybrid/" + q;
+  var sh = document.getElementById("shaders");
+  if (sh) sh.href = "hybrid-shaders/" + q;
   function showChoice() {
     document.getElementById("choice").style.display = "flex";
   }
