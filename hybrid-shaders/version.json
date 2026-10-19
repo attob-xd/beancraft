@@ -1,7 +1,7 @@
 {
- "build": "1792373523",
+ "build": "1792374073",
  "date": "October 18, 2026",
  "notes": [
-  "Shadows! Open Mods > Iris + Sodium Bundle > Shader Packs... and pick Low, Medium, High or Extreme+: blocks, trees and hills cast real shadows from the sun and moon, and Medium and up add MakeUp's volumetric clouds. The Shadowless profiles stay the fastest."
+  "Add Mod File in Mods now takes .jar mods too. The game reads the jar's own name, icon and description: the Iris + Sodium bundle jar becomes the built-in Iris + Sodium Bundle, Iris and Sodium jars switch on their versions here, and any other jar gets a card that says whether it can run (Java mod code can't run in a browser, so a mod needs a browser version)."
  ]
 }
