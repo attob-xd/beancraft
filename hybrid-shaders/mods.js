@@ -301,6 +301,7 @@
 			if (q.has("stay")) req.stay = true;
 			if (q.has("scale")) req.scale = parseFloat(q.get("scale"));
 			if (q.has("iris")) req.iris = true; // install the Iris mod first (a test profile)
+			if (q.has("nofacecull")) req.nofacecull = true; // Sodium's block face culling off for this run
 			if (q.has("shaderpack")) req.shaderpack = q.get("shaderpack"); // pick an added pack by name
 			return JSON.stringify(req);
 		}
