@@ -1,5 +1,10 @@
 {
- "build": "1792410638",
+ "build": "1792418499",
  "date": "October 19, 2026",
- "notes": []
+ "notes": [
+  "Iris is a real mod now. Iris Shaders has its own card in Mods next to Sodium (with their real icons), and the Iris + Sodium Bundle is the combo that turns both on or off together.",
+  "Iris's own Shader Packs screen: press O in game (or Shader Packs... in Mods, Options or Sodium's Video Settings). Turn shaders on or off, pick a pack, and use Add Shader Pack... to add any OptiFine or Iris shader pack .zip. Packs you add stay saved in your browser.",
+  "Shader Pack Settings shows every option the pack has, on the pack's own pages, plus its profiles. Changes wait until you press Apply, and every pack keeps its own settings. Iris's keys: K toggles shaders, R reloads them, O opens Shader Packs.",
+  "Other shader packs work too: BSL now renders with its shadows and clouds instead of a black screen. Big packs like BSL are much heavier than MakeUp, so on a Chromebook stay with MakeUp. Add Mod File also takes a shader pack .zip, and adding the Iris + Sodium Bundle jar installs the pack inside it."
+ ]
 }
