@@ -1,5 +1,7 @@
 {
- "build": "1792374611",
+ "build": "1792375002",
  "date": "October 18, 2026",
- "notes": []
+ "notes": [
+  "With a shadow profile (Low and up), mobs, players, chests and your own player now cast shadows too, and shader frames got faster."
+ ]
 }
