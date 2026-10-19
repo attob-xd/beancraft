@@ -1,7 +1,5 @@
 {
- "build": "1792374073",
+ "build": "1792374611",
  "date": "October 18, 2026",
- "notes": [
-  "Add Mod File in Mods now takes .jar mods too. The game reads the jar's own name, icon and description: the Iris + Sodium bundle jar becomes the built-in Iris + Sodium Bundle, Iris and Sodium jars switch on their versions here, and any other jar gets a card that says whether it can run (Java mod code can't run in a browser, so a mod needs a browser version)."
- ]
+ "notes": []
 }
