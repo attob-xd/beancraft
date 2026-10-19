@@ -1,9 +1,10 @@
 {
- "build": "1792430786",
+ "build": "1792449538",
  "date": "October 19, 2026",
  "notes": [
-  "Sodium's real Video Settings: the same menu Sodium 0.4.1 has, taken from the mod itself - General, Quality, Performance and Advanced, every option with Sodium's own description and performance impact, Undo and Apply. Shift+P opens the old Video Settings.",
-  "New Sodium options that really work: Weather and Leaves quality, Biome Blend, Vignette, Fog Occlusion, Entity Culling, Always Defer Chunk Updates, and Use Block Face Culling - the sides of blocks facing away from you aren't drawn any more, so the world is less work for your computer.",
-  "With Iris on, Sodium's menu also has a Shader Packs... tab, Max Shadow Distance (lower it for more speed with shadows) and Color Space."
+  "Photon works: it doesn't crash any more, and its sky, clouds, sunlight, shadows, sunsets and night sky look the way Photon is meant to.",
+  "Shader packs made for Minecraft 1.13 and newer (like Photon) now know which blocks are water, leaves, plants and lights, and get the biome they're in.",
+  "Fixed parts of shader packs that the browser was quietly refusing to draw: BSL's shadows, Photon's block outline, and a few more.",
+  "Photon is a heavy pack: on a Chromebook the built-in MakeUp runs about four times faster."
  ]
 }

@@ -303,6 +303,7 @@
 			if (q.has("iris")) req.iris = true; // install the Iris mod first (a test profile)
 			if (q.has("nofacecull")) req.nofacecull = true; // Sodium's block face culling off for this run
 			if (q.has("shaderpack")) req.shaderpack = q.get("shaderpack"); // pick an added pack by name
+			if (q.has("packopts")) req.packopts = q.get("packopts"); // NAME=value,... over the pack's options, this run only
 			return JSON.stringify(req);
 		}
 		case "benchshot":
