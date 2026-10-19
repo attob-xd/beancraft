@@ -299,6 +299,7 @@
 			const req = { mode: q.get("bench") || "vanilla", rd: parseInt(q.get("rd") || "8", 10) };
 			if (q.has("profile")) req.profile = q.get("profile");
 			if (q.has("stay")) req.stay = true;
+			if (q.has("scale")) req.scale = parseFloat(q.get("scale"));
 			return JSON.stringify(req);
 		}
 		case "benchshot":

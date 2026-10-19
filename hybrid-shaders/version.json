@@ -1,9 +1,8 @@
 {
- "build": "1792369523",
+ "build": "1792372631",
  "date": "October 18, 2026",
  "notes": [
-  "Welcome to 1.18.2 Shaders (Experimental)! The MakeUp Ultra Fast shaders are built in and on from the start: sunlight and sky colours, fog and haze, sunsets, starry nights, shiny water, and a torch in your hand that lights up what's around you.",
-  "Options > Shaders turns them off or picks a profile (No Effects, Shadowless Low, Medium or High). Press K in game to switch them on and off.",
-  "It's experimental: no shadows yet, and on slower computers the shaders draw at a lower resolution to keep things moving. Your worlds and settings are the same ones as in the regular 1.18.2."
+  "Shaders are a mod now. The game starts without shaders; turn on the Iris + Sodium Bundle in Mods and you get shaders with MakeUp Ultra Fast included, plus Sodium's video settings. K switches the shaders on and off. If you had shaders before this update, turn the bundle on to get them back.",
+  "A brand-new Mods screen: every mod is a card with its own on/off switch, with tabs (All, Enabled, Featured, Client) and search at the top. Click a card to see its page."
  ]
 }
