@@ -1,10 +1,9 @@
 {
- "build": "1792449538",
+ "build": "1792464522",
  "date": "October 19, 2026",
  "notes": [
-  "Photon works: it doesn't crash any more, and its sky, clouds, sunlight, shadows, sunsets and night sky look the way Photon is meant to.",
-  "Shader packs made for Minecraft 1.13 and newer (like Photon) now know which blocks are water, leaves, plants and lights, and get the biome they're in.",
-  "Fixed parts of shader packs that the browser was quietly refusing to draw: BSL's shadows, Photon's block outline, and a few more.",
-  "Photon is a heavy pack: on a Chromebook the built-in MakeUp runs about four times faster."
+  "Three horror mods, converted to run here: The Man From The Fog, Cave Dweller and From The Fog. Find them in Mods under Converted - their own models, animations, sounds and jumpscares.",
+  "The horror server is on play.attob.lol when it's running: it only lets you in with all three horror mods turned on, and tells you which ones you're missing.",
+  "Items with their own models (CustomModelData, as 1.14+ servers use) now show them - From The Fog's Herobrine is built that way."
  ]
 }
