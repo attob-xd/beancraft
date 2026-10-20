@@ -1,9 +1,11 @@
 {
- "build": "1792518055",
+ "build": "1792520397",
  "date": "October 20, 2026",
  "notes": [
-  "A much better Flashlight: a bright round hotspot with a soft wider glow around it, from the flashlight in your hand rather than your eyes, fading with distance and stopping at walls.",
-  "Other players' flashlights now show as a faint beam in the air, and you see the glare of the lens when one points at you.",
-  "Works with shader packs: with Iris on, the beam lights the world in the pack's own lighting, and a lit flashlight counts as held light."
+  "Voice chat rebuilt, Simple Voice Chat style. Press V for the new voice chat screen: smooth and clean, with players, groups and settings.",
+  "Groups: make one (Normal, Open or Isolated, with an optional password) and talk to your group from anywhere in the world.",
+  "Hold B to whisper (only people close by hear you). Talk with push to talk or voice activation, with a live level meter to set it.",
+  "Voices sound real: 3D direction, muffled through walls (more through wool, less through glass) and under water, and an echo in caves.",
+  "Noise suppression, echo cancellation, a microphone test, a volume for each player and a choice of microphone - in Settings."
  ]
 }
