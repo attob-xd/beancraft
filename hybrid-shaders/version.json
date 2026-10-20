@@ -1,11 +1,9 @@
 {
- "build": "1792534421",
+ "build": "1792536730",
  "date": "October 20, 2026",
  "notes": [
-  "Much faster on Chromebooks and other slow computers: every block was running the flashlight's shader code even with no flashlight on. Fixed - about 45% more frames per second on a slow GPU.",
-  "New video setting, Render Resolution (Options > Video Settings > Quality). On Auto it draws the world at a lower resolution only while your GPU can't keep up, and goes back up when it can. The HUD and menus stay sharp.",
-  "Smaller download: 23.5 MB instead of 31.8 MB, so the game starts faster.",
-  "The horror mods are gone: The Man From The Fog, Cave Dweller, From The Fog, The Obsessed, Face of Horror and Paranoia. The Flashlight stays (Mods > Converted).",
-  "Voice chat's HUD no longer blurs the game behind it, which slow GPUs paid for every frame."
+  "New: AmbientSounds (Mods > Converted, on). Birds in forests and plains, crickets and owls at night, wind up high and in the open, waves at the beach, rain on the leaves, drips and rumbles in caves, the nether's moan - fading in and out with where you are, the time and the weather. Each sound downloads the first time it plays.",
+  "New: Sound Physics (on). Sounds behind walls are muffled (more through wool, less through glass), caves and big rooms echo, far sounds soften, and everything is muffled under water.",
+  "Also in this update: much faster on Chromebooks (the flashlight's shader no longer runs when no flashlight is on), Render Resolution in Video Settings, and a smaller download."
  ]
 }

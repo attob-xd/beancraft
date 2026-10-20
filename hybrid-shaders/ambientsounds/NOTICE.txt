@@ -1,0 +1,6 @@
+AmbientSounds 6.3.11 by CreativeMD and AriaFreeze - https://github.com/CreativeMD/AmbientSounds
+Licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0-only); the full text is in LICENSE.txt.
+
+In the beancraft hybrid client: the mod's engine definitions (basic/**) and sounds are used as they are, except that
+the sounds are re-encoded to mono 32 kHz Vorbis and sounds.json marks them not streamed. Its Java code is ported to the
+1.12 client as net.minecraft.client.audio.ambient (also LGPL-3.0; the source is published with the client).
