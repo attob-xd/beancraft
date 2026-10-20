@@ -1,11 +1,11 @@
 {
- "build": "1792520397",
+ "build": "1792534421",
  "date": "October 20, 2026",
  "notes": [
-  "Voice chat rebuilt, Simple Voice Chat style. Press V for the new voice chat screen: smooth and clean, with players, groups and settings.",
-  "Groups: make one (Normal, Open or Isolated, with an optional password) and talk to your group from anywhere in the world.",
-  "Hold B to whisper (only people close by hear you). Talk with push to talk or voice activation, with a live level meter to set it.",
-  "Voices sound real: 3D direction, muffled through walls (more through wool, less through glass) and under water, and an echo in caves.",
-  "Noise suppression, echo cancellation, a microphone test, a volume for each player and a choice of microphone - in Settings."
+  "Much faster on Chromebooks and other slow computers: every block was running the flashlight's shader code even with no flashlight on. Fixed - about 45% more frames per second on a slow GPU.",
+  "New video setting, Render Resolution (Options > Video Settings > Quality). On Auto it draws the world at a lower resolution only while your GPU can't keep up, and goes back up when it can. The HUD and menus stay sharp.",
+  "Smaller download: 23.5 MB instead of 31.8 MB, so the game starts faster.",
+  "The horror mods are gone: The Man From The Fog, Cave Dweller, From The Fog, The Obsessed, Face of Horror and Paranoia. The Flashlight stays (Mods > Converted).",
+  "Voice chat's HUD no longer blurs the game behind it, which slow GPUs paid for every frame."
  ]
 }
