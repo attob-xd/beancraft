@@ -1,12 +1,9 @@
 {
- "build": "1792516140",
+ "build": "1792518055",
  "date": "October 20, 2026",
  "notes": [
-  "Four more converted mods in Mods > Converted: The Obsessed, Face of Horror, Paranoia and the Flashlight.",
-  "The Obsessed picks one of you and comes back again and again: it watches from far off, leans out from behind trees, crawls closer, follows you from the side and leaves you gifts. Upset it and it shows its spider form... and it may carry you off.",
-  "Face of Horror: faces wait in dark corners and behind walls - see one and you freeze. Some slide out of the wall right next to you, and something whispers nearby.",
-  "Paranoia: hurt, hungry, underground, in the dark or in the rain, you hear footsteps and creepers that aren't there, every mob stares at you, you drop what you're holding, and the fog closes in.",
-  "Flashlight: right-click to switch it on - a real beam that lights the world in front of you, and other players see yours. Hold a battery in your other hand and right-click to put it in. The horror server gives you one when you first join.",
-  "The horror server now needs all six horror mods turned on (the Flashlight is optional)."
+  "A much better Flashlight: a bright round hotspot with a soft wider glow around it, from the flashlight in your hand rather than your eyes, fading with distance and stopping at walls.",
+  "Other players' flashlights now show as a faint beam in the air, and you see the glare of the lens when one points at you.",
+  "Works with shader packs: with Iris on, the beam lights the world in the pack's own lighting, and a lit flashlight counts as held light."
  ]
 }
