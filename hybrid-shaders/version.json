@@ -1,10 +1,8 @@
 {
- "build": "1792465477",
- "date": "October 19, 2026",
+ "build": "1792500525",
+ "date": "October 20, 2026",
  "notes": [
-  "Three horror mods, converted to run here: The Man From The Fog, Cave Dweller and From The Fog. Find them in Mods under Converted - their own models, animations, sounds and jumpscares.",
-  "The horror server is on play.attob.lol when it's running: it only lets you in with all three horror mods turned on, and tells you which ones you're missing.",
-  "Items with their own models (CustomModelData, as 1.14+ servers use) now show them - From The Fog's Herobrine is built that way.",
-  "Fixed a crash when Herobrine's glowing eyes came into view."
+  "Horror mods: you can hear them now - every sound from The Man From The Fog, Cave Dweller and From The Fog was being lost on the way from the server.",
+  "Horror server: The Man now watches from close enough to actually show up, comes more often (day or night), the Cave Dweller visits caves more often, and Herobrine starts right away instead of after three days."
  ]
 }
