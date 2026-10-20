@@ -1,9 +1,9 @@
 {
- "build": "1792536730",
+ "build": "1792538150",
  "date": "October 20, 2026",
  "notes": [
-  "New: AmbientSounds (Mods > Converted, on). Birds in forests and plains, crickets and owls at night, wind up high and in the open, waves at the beach, rain on the leaves, drips and rumbles in caves, the nether's moan - fading in and out with where you are, the time and the weather. Each sound downloads the first time it plays.",
-  "New: Sound Physics (on). Sounds behind walls are muffled (more through wool, less through glass), caves and big rooms echo, far sounds soften, and everything is muffled under water.",
-  "Also in this update: much faster on Chromebooks (the flashlight's shader no longer runs when no flashlight is on), Render Resolution in Video Settings, and a smaller download."
+  "The Flashlight works everywhere now (Mods > Converted, on). In singleplayer craft it - iron ingots around a yellow glass pane, a comparator and a block of redstone - or use /flashlight; batteries are crafted from iron nuggets, gold ingots, iron ingots and a block of redstone. On servers with the HybridFlashlight plugin everyone sees your beam. On any other server press G for a flashlight only you can see (Controls > Misc to change the key).",
+  "Player Locator works without its plugin: on any server, and with friends in your singleplayer world, it points to the players near you. Servers with the HybridLocator plugin still share locations from anywhere in the world.",
+  "The Mods screen says where each mod works instead of naming a server."
  ]
 }
