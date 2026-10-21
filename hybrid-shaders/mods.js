@@ -304,6 +304,7 @@
 			if (q.has("nofacecull")) req.nofacecull = true; // Sodium's block face culling off for this run
 			if (q.has("shaderpack")) req.shaderpack = q.get("shaderpack"); // pick an added pack by name
 			if (q.has("packopts")) req.packopts = q.get("packopts"); // NAME=value,... over the pack's options, this run only
+			if (q.has("mods")) req.mods = q.get("mods"); // mods to switch on first (a test profile), e.g. stalker
 			return JSON.stringify(req);
 		}
 		case "benchshot":

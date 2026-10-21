@@ -1,9 +1,8 @@
 {
- "build": "1792538150",
+ "build": "1792551638",
  "date": "October 20, 2026",
  "notes": [
-  "The Flashlight works everywhere now (Mods > Converted, on). In singleplayer craft it - iron ingots around a yellow glass pane, a comparator and a block of redstone - or use /flashlight; batteries are crafted from iron nuggets, gold ingots, iron ingots and a block of redstone. On servers with the HybridFlashlight plugin everyone sees your beam. On any other server press G for a flashlight only you can see (Controls > Misc to change the key).",
-  "Player Locator works without its plugin: on any server, and with friends in your singleplayer world, it points to the players near you. Servers with the HybridLocator plugin still share locations from anywhere in the world.",
-  "The Mods screen says where each mod works instead of naming a server."
+  "New horror mod: Twixxel's Stalker (Mods > Converted - off until you turn it on). Something stalks you: it watches from far off or uncomfortably close and is gone if you get near, leaving you in darkness; it appears right behind you; and sometimes it hunts you, only moving while you aren't looking and breaking through anything in its way. Bad weather brings it more often. By MrPerkasc, idea Twixxel_lesgo, designs LCrandom.",
+  "It works in singleplayer and on servers with the HybridStalker plugin. Only players who turn it on are stalked, and only they can see it. It hits hard (5 hearts) and its chase breaks blocks - you have been warned."
  ]
 }
