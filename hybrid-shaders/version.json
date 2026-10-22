@@ -1,8 +1,9 @@
 {
- "build": "1792691975",
+ "build": "1792708793",
  "date": "October 22, 2026",
  "notes": [
-  "New horror mod: Arthropod Phobia Expansions (Mods > Converted - off until you turn it on). Realistic spiders, and far too big: recluses, giant huntsmen, tarantulas the size of a horse, the widow, the reaper, crowds of long-legged harvestmen in caves - and the ambusher that waits low and still until you walk right up to it. They come in the dark, and they leap.",
-  "They hit hard (3 to 7 hearts) and take a lot of killing. Works in singleplayer and on servers with the HybridHorrorKit plugin; only players who turn it on are hunted."
+  "New mod: Timeless and Classics Guns: Zero (Mods > Featured - off until you turn it on; it downloads a 6 MB gun pack the first time). 54 real guns - pistols, SMGs, rifles, snipers, shotguns, machine guns and launchers - each with the original's models, reloads, inspects, draw and bolt animations, recoil and sounds.",
+  "Left click fires, right click aims down the sights, R reloads, I inspects, Y changes fire mode (auto, semi, burst). Make guns and ammo at any smithing table - right click it for the Gun Smith Table (shift + right click for smithing).",
+  "Works in singleplayer and on servers with the HybridGuns plugin. TaCZ's gun pack is by Serene Wave Studio / Timeless Squad (CC BY-NC-ND 4.0); this client draws and fires the guns with its own code."
  ]
 }

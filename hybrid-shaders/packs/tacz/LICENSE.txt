@@ -1,0 +1,11 @@
+Timeless and Classics Guns: Zero (TaCZ) 1.1.8 for Minecraft 1.20.1, by Serene Wave Studio / Timeless Squad.
+https://modrinth.com/mod/timeless-and-classics-zero - https://github.com/MCModderAnchor/TACZ
+
+Its default gun pack ("TAC Zero Default Pack": the guns' models, animations, textures, sounds and numbers) and the
+Gun Smith Table's model are used here under CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/):
+attribution, non-commercial, no derivatives. The files are as they come in the mod's jar; the only changes are
+technical changes of format that section 2(a)(4) of the licence allows (JSON comments and whitespace removed, sounds
+moved to the folder this client reads them from, the shader-only normal and specular maps left out).
+
+None of TaCZ's program code (GPL-3.0) is used. The guns are drawn, animated and fired by this client's own code
+(net.minecraft.client.guns, net.attob.guns), written to read the pack's formats.
