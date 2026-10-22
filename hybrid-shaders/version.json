@@ -1,8 +1,8 @@
 {
- "build": "1792673804",
+ "build": "1792689078",
  "date": "October 22, 2026",
  "notes": [
-  "New horror mod: The Starved Stalker (Mods > Converted - off until you turn it on). It is hungry. At night and in the dark places it crawls up out of the ground and wanders, quiet... until you come too close. Then it rears up, roars, and becomes something faster that only wants you. It tears through glass and doors, its roar leaves you reeling, and when it has eaten it leaves a mouth in the ground behind - the Hungrejaws.",
-  "It bites for 8 hearts and has 100 health. Works in singleplayer and on servers with the HybridHorrorKit plugin; only players who turn it on are hunted. Also: Jade no longer shows the horror creatures' internal names."
+  "Fixed: you couldn't crouch. Jade's \"show details\" key shares Left Shift with sneak, and only one of them could have the key - now both work.",
+  "The Man From The Shadow's pills are the mod's own little 3D jar now (with its lid and the pills inside) instead of a flat picture - in your hand, your inventory and on the ground."
  ]
 }
