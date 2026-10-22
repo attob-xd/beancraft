@@ -187,7 +187,7 @@ public final class Jade {
 
 	static String modName(Object o) {
 		if (o instanceof Entity && kitCreature((Entity) o) != null) {
-			return "The Starved Stalker";
+			return ((Entity) o).getCustomNameTag().startsWith("arphex:") ? "Arthropod Phobia Expansions" : "The Starved Stalker";
 		}
 		return "Minecraft"; // every block, item and creature here is Minecraft's own (1.12, or 1.18.2's)
 	}
@@ -203,6 +203,18 @@ public final class Jade {
 		String n = e.getCustomNameTag();
 		if (n.startsWith("starved:")) {
 			return n.startsWith("starved:jaws") ? "Hungrejaws" : "The Starved Stalker";
+		}
+		if (n.startsWith("arphex:")) {
+			String[] p = n.split(":");
+			String[][] names = { { "recluse", "Spider Recluse" }, { "lunger", "Spider Lunger" }, { "ambusher", "Spider Ambusher" },
+					{ "longlegs", "Long Legs" }, { "prowler", "Spider Prowler" }, { "goliath", "Spider Goliath" },
+					{ "reaper", "Spider Reaper" }, { "snatcher", "Spider Snatcher" } };
+			for (String[] k : names) {
+				if (p.length > 1 && k[0].equals(p[1])) {
+					return k[1];
+				}
+			}
+			return "Spider";
 		}
 		return n.startsWith("shadow:") || n.startsWith("corner:") || n.startsWith("playmate:") || n.startsWith("ssh:") ? ""
 				: null;
