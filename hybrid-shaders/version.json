@@ -1,8 +1,8 @@
 {
- "build": "1792690431",
+ "build": "1792691198",
  "date": "October 22, 2026",
  "notes": [
-  "New horror mod: Playmate (Mods > Converted - off until you turn it on). Stay awake two nights, and on the third it wants to play hide and seek. Hide: it counts, then it looks for you for a minute - light, footsteps and building give you away, and it opens doors. Seek: eyes shut while it hides, then find it three times before time runs out.",
-  "Let it see you, or lose, and it runs at you... Sleeping resets the nights. Works in singleplayer and on servers with the HybridHorrorKit plugin; only players who turn it on play."
+  "New horror mod: Server-Side Horror (Mods > Converted - off until you turn it on). Quiet, slow and rare: someone stands far off and stares, and is gone when you look. Players join the game who aren't there. Mining behind the walls, footsteps where no one walks, a face right before your eyes when you stand still. Torches go out, signs and heads turn up near you.",
+  "It starts after the world's third day and stays rare on purpose. Works in singleplayer and on servers with the HybridHorrorKit plugin; only players who turn it on are haunted."
  ]
 }

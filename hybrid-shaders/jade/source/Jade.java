@@ -204,7 +204,8 @@ public final class Jade {
 		if (n.startsWith("starved:")) {
 			return n.startsWith("starved:jaws") ? "Hungrejaws" : "The Starved Stalker";
 		}
-		return n.startsWith("shadow:") || n.startsWith("corner:") || n.startsWith("playmate:") ? "" : null;
+		return n.startsWith("shadow:") || n.startsWith("corner:") || n.startsWith("playmate:") || n.startsWith("ssh:") ? ""
+				: null;
 	}
 
 	// ------------------------------------------------------------------ blocks
