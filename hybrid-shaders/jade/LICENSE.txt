@@ -1,0 +1,15 @@
+Jade ("What am I looking at") - Jade 5.3.2 for Minecraft 1.18.2 by Snownee, which continues Waila/Hwyla by
+ProfMobius and TehNut. https://www.curseforge.com/minecraft/mc-mods/jade
+
+This client's Jade (net.minecraft.client.jade) is an adaptation of Jade's code to Minecraft 1.12: the overlay, its
+themes and settings, and the vanilla providers (names, mod name, health and armor, crop growth, the harvest tool,
+redstone, spawners, horses, item frames, enchanting power, player heads, note blocks, TNT, baby mobs). Its text
+strings are Jade's English ones. Changes from the original: ported to the 1.12 code base, the settings screen is one
+list of buttons, the harvest tool's tick sits on the tool icon.
+
+Jade is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0),
+https://creativecommons.org/licenses/by-nc-sa/4.0/ - and so is this adaptation. Its source is published next to the
+game, in jade/source/ on the same site.
+
+You may share and adapt it for non-commercial purposes, giving credit to Snownee and indicating changes, and you must
+distribute your adaptations under the same license.

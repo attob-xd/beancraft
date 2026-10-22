@@ -1,8 +1,10 @@
 {
- "build": "1792551638",
- "date": "October 20, 2026",
+ "build": "1792632859",
+ "date": "October 21, 2026",
  "notes": [
-  "New horror mod: Twixxel's Stalker (Mods > Converted - off until you turn it on). Something stalks you: it watches from far off or uncomfortably close and is gone if you get near, leaving you in darkness; it appears right behind you; and sometimes it hunts you, only moving while you aren't looking and breaking through anything in its way. Bad weather brings it more often. By MrPerkasc, idea Twixxel_lesgo, designs LCrandom.",
-  "It works in singleplayer and on servers with the HybridStalker plugin. Only players who turn it on are stalked, and only they can see it. It hits hard (5 hearts) and its chase breaks blocks - you have been warned."
+  "New: Jade (Mods > Converted, on). Look at a block or creature and the top of the screen tells you what it is: its name, health and armor, how grown a crop is, which tool breaks it and whether yours can (a tick or a cross, in survival), redstone settings, spawner mobs, horse stats and more. Press J to hide or show it; its settings are on its card in Mods. Jade is by Snownee (CC BY-NC-SA 4.0).",
+  "Kicked with \"End of stream\"? You now reconnect by yourself after 3 seconds, and the server lets you straight back in - it used to say \"You are already connected to this proxy\" or \"logging in too fast\" for half a minute. Any disconnect from a server also has a Reconnect button.",
+  "Faster on Chromebooks: new chunks are built in small steps that fit between frames (fewer stutters while flying), sound echoes only run while there is an echo to hear, and slow devices start with lighter settings.",
+  "Fixed: the Flashlight and Whisper keys showed as raw names in Controls; joining a busy server on a slow connection no longer gives up too early."
  ]
 }

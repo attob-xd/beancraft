@@ -248,6 +248,18 @@
 			}));
 		case "state":
 			return JSON.stringify({ dirty: dirty, downloading: downloading > 0, status: status });
+		case "device": {
+			// for the client's weak-device settings (GameSettings): cores, memory, the GPU's name, a Chromebook?
+			let gpu = "";
+			try {
+				const c = document.createElement("canvas").getContext("webgl");
+				const ext = c && c.getExtension("WEBGL_debug_renderer_info");
+				gpu = ext ? String(c.getParameter(ext.UNMASKED_RENDERER_WEBGL)) : (c ? String(c.getParameter(c.RENDERER)) : "");
+				const lose = c && c.getExtension("WEBGL_lose_context"); if (lose) lose.loseContext();
+			} catch (e) { }
+			return JSON.stringify({ cores: navigator.hardwareConcurrency || 0, memoryGB: navigator.deviceMemory || 0,
+				chromebook: /CrOS/.test(navigator.userAgent), gpu: gpu });
+		}
 		case "add": {
 			let o;
 			try { o = JSON.parse(arg); } catch (e) { return "bad"; }
