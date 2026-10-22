@@ -1,8 +1,8 @@
 {
- "build": "1792636792",
+ "build": "1792672803",
  "date": "October 22, 2026",
  "notes": [
-  "New horror mod: Corner Entity (Mods > Converted - off until you turn it on). Something waits in the corners. The sky glitches, then it is out there in cover, walking to you only while you aren't looking - stare at it and you slow and darken. Get close and it vanishes... sometimes in your face. Faces flash in the corners of your screen, it stands behind you, it watches through your windows, footsteps follow you and someone knocks on your door.",
-  "It works in singleplayer and on servers with the HybridHorrorKit plugin, and only players who turn it on are haunted. Its screamer can kill. Operators can try every event with /corner test."
+  "New horror mod: The Man From The Shadow (Mods > Converted - off until you turn it on). Your sanity slips away, and only the orange pills bring it back - the doctor said he is not real. The lower it gets, the greyer the world and the less your view keeps still. A figure watches you from far away and is gone when you look... at night it walks to you while you look away, or follows right behind you. And when nothing is left of your mind, the Man comes for you.",
+  "When the Man grabs you, hold G (or attack) to break free - or he kills you. You get the pills once; /shadow lostpills gives you more. It works in singleplayer and on servers with the HybridHorrorKit plugin, and only players who turn it on are haunted. Operators can try every event with /shadow test."
  ]
 }
