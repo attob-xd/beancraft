@@ -1,8 +1,8 @@
 {
- "build": "1792672803",
+ "build": "1792673804",
  "date": "October 22, 2026",
  "notes": [
-  "New horror mod: The Man From The Shadow (Mods > Converted - off until you turn it on). Your sanity slips away, and only the orange pills bring it back - the doctor said he is not real. The lower it gets, the greyer the world and the less your view keeps still. A figure watches you from far away and is gone when you look... at night it walks to you while you look away, or follows right behind you. And when nothing is left of your mind, the Man comes for you.",
-  "When the Man grabs you, hold G (or attack) to break free - or he kills you. You get the pills once; /shadow lostpills gives you more. It works in singleplayer and on servers with the HybridHorrorKit plugin, and only players who turn it on are haunted. Operators can try every event with /shadow test."
+  "New horror mod: The Starved Stalker (Mods > Converted - off until you turn it on). It is hungry. At night and in the dark places it crawls up out of the ground and wanders, quiet... until you come too close. Then it rears up, roars, and becomes something faster that only wants you. It tears through glass and doors, its roar leaves you reeling, and when it has eaten it leaves a mouth in the ground behind - the Hungrejaws.",
+  "It bites for 8 hearts and has 100 health. Works in singleplayer and on servers with the HybridHorrorKit plugin; only players who turn it on are hunted. Also: Jade no longer shows the horror creatures' internal names."
  ]
 }

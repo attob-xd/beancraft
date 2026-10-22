@@ -126,6 +126,10 @@ public final class Jade {
 			blockTail(head, mc.world, pos, state, mc.player);
 		} else if (hit.typeOfHit == RayTraceResult.Type.ENTITY && hit.entityHit != null && c.displayEntities) {
 			Entity e = hit.entityHit;
+			if ("".equals(kitCreature(e))) {
+				current = null; // the horror kit's watchers stay nameless
+				return;
+			}
 			if (e instanceof EntityItem) {
 				icon = new JadeTooltip.Item(((EntityItem) e).getEntityItem(), 1);
 			} else if (e instanceof EntityItemFrame && !((EntityItemFrame) e).getDisplayedItem().func_190926_b()) {
@@ -182,7 +186,25 @@ public final class Jade {
 	}
 
 	static String modName(Object o) {
+		if (o instanceof Entity && kitCreature((Entity) o) != null) {
+			return "The Starved Stalker";
+		}
 		return "Minecraft"; // every block, item and creature here is Minecraft's own (1.12, or 1.18.2's)
+	}
+
+	/**
+	 * The horror kit's creatures are zombies named for what the client draws ("starved:aggro:walk"): their proper
+	 * name, "" for the ones that should stay nameless (the Man, the Stalker, Corner Entity), null for anything else
+	 */
+	static String kitCreature(Entity e) {
+		if (!(e instanceof net.minecraft.entity.monster.EntityZombie) || !e.hasCustomName()) {
+			return null;
+		}
+		String n = e.getCustomNameTag();
+		if (n.startsWith("starved:")) {
+			return n.startsWith("starved:jaws") ? "Hungrejaws" : "The Starved Stalker";
+		}
+		return n.startsWith("shadow:") || n.startsWith("corner:") ? "" : null;
 	}
 
 	// ------------------------------------------------------------------ blocks
@@ -432,8 +454,10 @@ public final class Jade {
 	/** BaseEntityProvider.appendHead */
 	private static void entityHead(JadeTooltip t, Entity e) {
 		JadeConfig c = config();
-		String name = e instanceof EntityItem && !e.hasCustomName() ? ((EntityItem) e).getEntityItem().getDisplayName()
-				: e.getDisplayName().getUnformattedText();
+		String kit = kitCreature(e);
+		String name = kit != null ? kit
+				: e instanceof EntityItem && !e.hasCustomName() ? ((EntityItem) e).getEntityItem().getDisplayName()
+						: e.getDisplayName().getUnformattedText();
 		t.add(new JadeTooltip.Text(name, c.theme().titleColor).tag("object_name"));
 		if (c.registryName) {
 			t.add(new JadeTooltip.Text(TextFormatting.GRAY + String.valueOf(net.minecraft.entity.EntityList.func_191301_a(e))).tag("registry_name"));
