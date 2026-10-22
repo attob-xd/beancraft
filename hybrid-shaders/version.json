@@ -1,7 +1,8 @@
 {
- "build": "1792634822",
+ "build": "1792636792",
  "date": "October 22, 2026",
  "notes": [
-  "Shaders run about 30% faster on Chromebooks (21 to 27 fps turning, 25 to 31 flying in our test). When your computer can't keep up, the world is drawn at a lower resolution and then sharpened back to full size, so it stays crisp instead of blurry."
+  "New horror mod: Corner Entity (Mods > Converted - off until you turn it on). Something waits in the corners. The sky glitches, then it is out there in cover, walking to you only while you aren't looking - stare at it and you slow and darken. Get close and it vanishes... sometimes in your face. Faces flash in the corners of your screen, it stands behind you, it watches through your windows, footsteps follow you and someone knocks on your door.",
+  "It works in singleplayer and on servers with the HybridHorrorKit plugin, and only players who turn it on are haunted. Its screamer can kill. Operators can try every event with /corner test."
  ]
 }

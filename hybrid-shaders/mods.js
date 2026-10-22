@@ -319,6 +319,11 @@
 			if (q.has("mods")) req.mods = q.get("mods"); // mods to switch on first (a test profile), e.g. stalker
 			return JSON.stringify(req);
 		}
+		// ---- a test profile without the benchmark: ?mods=stalker,corner (HybridBench.testMods)
+		case "testmods": {
+			const q = new URLSearchParams(window.location.search);
+			return q.has("mods") ? q.get("mods") : null;
+		}
 		case "benchshot":
 			bench.shot = arg;
 			++bench.shots;
