@@ -1,10 +1,7 @@
 {
- "build": "1792632859",
- "date": "October 21, 2026",
+ "build": "1792634822",
+ "date": "October 22, 2026",
  "notes": [
-  "New: Jade (Mods > Converted, on). Look at a block or creature and the top of the screen tells you what it is: its name, health and armor, how grown a crop is, which tool breaks it and whether yours can (a tick or a cross, in survival), redstone settings, spawner mobs, horse stats and more. Press J to hide or show it; its settings are on its card in Mods. Jade is by Snownee (CC BY-NC-SA 4.0).",
-  "Kicked with \"End of stream\"? You now reconnect by yourself after 3 seconds, and the server lets you straight back in - it used to say \"You are already connected to this proxy\" or \"logging in too fast\" for half a minute. Any disconnect from a server also has a Reconnect button.",
-  "Faster on Chromebooks: new chunks are built in small steps that fit between frames (fewer stutters while flying), sound echoes only run while there is an echo to hear, and slow devices start with lighter settings.",
-  "Fixed: the Flashlight and Whisper keys showed as raw names in Controls; joining a busy server on a slow connection no longer gives up too early."
+  "Shaders run about 30% faster on Chromebooks (21 to 27 fps turning, 25 to 31 flying in our test). When your computer can't keep up, the world is drawn at a lower resolution and then sharpened back to full size, so it stays crisp instead of blurry."
  ]
 }
