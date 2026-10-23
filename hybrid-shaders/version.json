@@ -1,9 +1,10 @@
 {
- "build": "1792708793",
+ "build": "1792724618",
  "date": "October 22, 2026",
  "notes": [
-  "New mod: Timeless and Classics Guns: Zero (Mods > Featured - off until you turn it on; it downloads a 6 MB gun pack the first time). 54 real guns - pistols, SMGs, rifles, snipers, shotguns, machine guns and launchers - each with the original's models, reloads, inspects, draw and bolt animations, recoil and sounds.",
-  "Left click fires, right click aims down the sights, R reloads, I inspects, Y changes fire mode (auto, semi, burst). Make guns and ammo at any smithing table - right click it for the Gun Smith Table (shift + right click for smithing).",
-  "Works in singleplayer and on servers with the HybridGuns plugin. TaCZ's gun pack is by Serene Wave Studio / Timeless Squad (CC BY-NC-ND 4.0); this client draws and fires the guns with its own code."
+  "Fixed: the game crashed when you went back to the menu (or opened Controls) while holding a gun.",
+  "Every mod item is in the creative inventory now: guns and ammo in Combat, the Flashlight and its battery in Tools, the pills in Brewing - and all of them in Search.",
+  "Typing a command shows suggestions like in newer versions: start with / and a list appears - Tab or a click fills it in, the arrow keys pick, Escape hides it. Works on servers too.",
+  "Guns: spent cases fly out when you fire, the sights stay steady while you aim and shoot, and you can see other players' muzzle flash."
  ]
 }
