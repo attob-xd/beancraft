@@ -1,8 +1,8 @@
 {
- "build": "1792765032",
+ "build": "1792774921",
  "date": "October 23, 2026",
  "notes": [
-  "Invite codes work across networks now. If your friend's game can't connect to yours directly (different Wi-Fi, phone data, strict routers), attob's relay carries the game between you instead. Codes also keep working however long your friend takes to join.",
-  "New mod: The Man From The Fog (Mods > Converted - off until you turn it on). He stands far off on open ground, facing you. Look right at him and he is gone. Look away and he is closer. Then he comes for you - on all fours, faster than you, up walls and through glass - and if he catches you, you see his face."
+  "Inviting friends is fixed. Friends now join your world through attob's relay straight away, so they no longer get stuck on \"Logging in...\" - it works on school Wi-Fi, phone data and any other network.",
+  "You can switch to another tab while friends join or play: your world keeps running for them. If your game does stop answering (closed, or the computer asleep), your friend is told so instead of waiting for ever."
  ]
 }

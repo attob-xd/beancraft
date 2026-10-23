@@ -322,10 +322,10 @@
 		// ---- an invite link: ?join=CODE goes straight into a friend's shared world
 		case "invitelink": // this page with ?join=CODE: the link a host sends friends
 			return window.location.origin + window.location.pathname + "?join=" + encodeURIComponent(arg);
-		// ---- a test: join shared worlds through the relay only (?relayonly), as when no direct connection works
-		case "relayonly": {
+		// ---- friends join shared worlds through attob's relay; ?direct tries a direct (WebRTC) connection first
+		case "direct": {
 			const q = new URLSearchParams(window.location.search);
-			return q.has("relayonly") ? "1" : null;
+			return q.has("direct") ? "1" : null;
 		}
 		case "joincode": {
 			const q = new URLSearchParams(window.location.search);
