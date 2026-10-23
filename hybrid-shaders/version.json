@@ -1,9 +1,9 @@
 {
- "build": "1792727464",
+ "build": "1792729040",
  "date": "October 22, 2026",
  "notes": [
-  "The horror mods actually do things now. Corner Entity comes about every 15 minutes instead of once in eight hours, with faces in the corner of your screen every 5.",
-  "The Man From The Shadow starts on your first day instead of the third: its Stalker watches from the start, the Man can come from day 1, and the Stalker hunts you from day 2.",
-  "The Starved Stalker comes about every 5 minutes of night or underground, Playmate wants to play after just one night awake, and the giant spiders come more often in the dark."
+  "New mod: Cave Dweller (Mods > Converted - off until you turn it on). Deep in the caves, in the dark, you hear it moving. It only shows itself where you are not looking - and when you see it, it decides: it stares and creeps closer while you look away, it runs, or it comes for you, faster than you can run.",
+  "It is the Better Cave Dweller mod by Cadentem (MIT): its model, animations and sounds, with its behaviour ported from its code. Works in singleplayer and on the server.",
+  "Invisible horror creatures no longer cast a shadow that gave them away."
  ]
 }
