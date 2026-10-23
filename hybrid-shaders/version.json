@@ -1,10 +1,9 @@
 {
- "build": "1792724618",
+ "build": "1792726799",
  "date": "October 22, 2026",
  "notes": [
-  "Fixed: the game crashed when you went back to the menu (or opened Controls) while holding a gun.",
-  "Every mod item is in the creative inventory now: guns and ammo in Combat, the Flashlight and its battery in Tools, the pills in Brewing - and all of them in Search.",
-  "Typing a command shows suggestions like in newer versions: start with / and a list appears - Tab or a click fills it in, the arrow keys pick, Escape hides it. Works on servers too.",
-  "Guns: spent cases fly out when you fire, the sights stay steady while you aim and shoot, and you can see other players' muzzle flash."
+  "Twixxel's Stalker is a lot scarier now. It comes far more often - a stalk every 4 minutes, something right behind you every 8, a chase every 15, and twice as often at night and in storms.",
+  "It finally does what its description promised: it creeps closer every time you look away, and at night it looks in through your windows - tapping on the glass until you see it. Look away and it is gone. Stare too long and the lights go out.",
+  "Server-Side Horror has been removed."
  ]
 }
