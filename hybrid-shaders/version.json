@@ -1,9 +1,9 @@
 {
- "build": "1792726799",
+ "build": "1792727464",
  "date": "October 22, 2026",
  "notes": [
-  "Twixxel's Stalker is a lot scarier now. It comes far more often - a stalk every 4 minutes, something right behind you every 8, a chase every 15, and twice as often at night and in storms.",
-  "It finally does what its description promised: it creeps closer every time you look away, and at night it looks in through your windows - tapping on the glass until you see it. Look away and it is gone. Stare too long and the lights go out.",
-  "Server-Side Horror has been removed."
+  "The horror mods actually do things now. Corner Entity comes about every 15 minutes instead of once in eight hours, with faces in the corner of your screen every 5.",
+  "The Man From The Shadow starts on your first day instead of the third: its Stalker watches from the start, the Man can come from day 1, and the Stalker hunts you from day 2.",
+  "The Starved Stalker comes about every 5 minutes of night or underground, Playmate wants to play after just one night awake, and the giant spiders come more often in the dark."
  ]
 }
