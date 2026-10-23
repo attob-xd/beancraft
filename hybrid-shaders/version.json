@@ -1,8 +1,7 @@
 {
- "build": "1792758277",
+ "build": "1792763154",
  "date": "October 23, 2026",
  "notes": [
-  "New mod: The Peeker (Mods > Converted - off until you turn it on). It never attacks and never makes a sound. Something with long thin arms and glowing eyes peeks at you over ledges and round corners, slips to the next bit of cover, and peeks again. The moment you really see it, it is gone - and the music stops while it is near.",
-  "By DanteTheThird (CC-BY-4.0). Works in singleplayer and on the server."
+  "Invite codes for your worlds now go through attob's own relay (relay.attob.lol) instead of Eaglercraft's public ones. Nothing changes for you: Invite Friends works the same."
  ]
 }
