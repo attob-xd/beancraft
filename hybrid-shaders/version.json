@@ -1,7 +1,8 @@
 {
- "build": "1792763154",
+ "build": "1792765032",
  "date": "October 23, 2026",
  "notes": [
-  "Invite codes for your worlds now go through attob's own relay (relay.attob.lol) instead of Eaglercraft's public ones. Nothing changes for you: Invite Friends works the same."
+  "Invite codes work across networks now. If your friend's game can't connect to yours directly (different Wi-Fi, phone data, strict routers), attob's relay carries the game between you instead. Codes also keep working however long your friend takes to join.",
+  "New mod: The Man From The Fog (Mods > Converted - off until you turn it on). He stands far off on open ground, facing you. Look right at him and he is gone. Look away and he is closer. Then he comes for you - on all fours, faster than you, up walls and through glass - and if he catches you, you see his face."
  ]
 }
