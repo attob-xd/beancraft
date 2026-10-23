@@ -204,6 +204,9 @@ public final class Jade {
 		if (n.startsWith("starved:")) {
 			return n.startsWith("starved:jaws") ? "Hungrejaws" : "The Starved Stalker";
 		}
+		if (n.startsWith("peeker:")) {
+			return ""; // a watcher: nothing gives it away
+		}
 		if (n.startsWith("dweller:")) {
 			return n.startsWith("dweller:hidden") ? "" : "Cave Dweller"; // unseen: nothing gives it away
 		}

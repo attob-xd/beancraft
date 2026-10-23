@@ -1,9 +1,8 @@
 {
- "build": "1792757236",
+ "build": "1792758277",
  "date": "October 23, 2026",
  "notes": [
-  "Invite friends to your world: in a singleplayer world, press Escape and click Invite Friends, then Get Invite Code. The code is copied for you, and there is an invite link in chat.",
-  "Your friend enters the code in Multiplayer > Join with Code, or just opens the link. They join your world - and the mods you have on (guns, horror mods and the rest) are turned on for them too.",
-  "The Cave Dweller now comes up in the caves you are in, not in a pocket above or below you."
+  "New mod: The Peeker (Mods > Converted - off until you turn it on). It never attacks and never makes a sound. Something with long thin arms and glowing eyes peeks at you over ledges and round corners, slips to the next bit of cover, and peeks again. The moment you really see it, it is gone - and the music stops while it is near.",
+  "By DanteTheThird (CC-BY-4.0). Works in singleplayer and on the server."
  ]
 }
