@@ -10,11 +10,11 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Minecraft 1.18.2" />
 		<meta property="og:description" content="Play Minecraft 1.18.2 in your browser" />
-		<meta property="og:image" content="favicon.png?v=1792729040" />
-		<link type="image/png" rel="shortcut icon" href="favicon.png?v=1792729040" />
-		<script type="text/javascript" src="bootstrap.js?v=1792729040"></script>
-		<script type="text/javascript" src="mods.js?v=1792729040"></script>
-		<script type="text/javascript" src="voice-relay.js?v=1792729040"></script>
+		<meta property="og:image" content="favicon.png?v=1792757236" />
+		<link type="image/png" rel="shortcut icon" href="favicon.png?v=1792757236" />
+		<script type="text/javascript" src="bootstrap.js?v=1792757236"></script>
+		<script type="text/javascript" src="mods.js?v=1792757236"></script>
+		<script type="text/javascript" src="voice-relay.js?v=1792757236"></script>
 		<script type="text/javascript">
 			"use strict";
 			// hybrid: updates. Once a minute (and when the tab comes back) version.json is read; if its build is not
@@ -22,7 +22,7 @@
 			// leaves the world, then answers "hybrid:reload" and the page reloads. The new page shows the patch
 			// notes once. deploy_beancraft.py writes version.json and stamps HYBRID_BUILD.
 			window.hybridUpdate = (function() {
-				var HYBRID_BUILD = "1792729040";
+				var HYBRID_BUILD = "1792757236";
 				var pending = null;
 				function store(kind, key, value) {
 					try {
@@ -143,16 +143,16 @@
 					window.eaglercraftXOpts = {
 						demoMode: false,
 						container: "game_frame",
-						assetsURI: "assets.epw?v=1792729040",
+						assetsURI: "assets.epw?v=1792757236",
 						worldsDB: "worlds_hybrid",
 						hooks: window.hybridUpdate.hooks,
 						servers: [
 							/* example: { addr: "ws://localhost:8081/", name: "Local test server" } */
 						],
 						relays: [
-							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },
-							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId == 1 },
-							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId == 2 }
+							/* relay.deev.is is gone (502 since 2026-10); these two answer */
+							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId != 1 },
+							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId == 1 }
 						]
 					};
 					

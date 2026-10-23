@@ -319,6 +319,13 @@
 			if (q.has("mods")) req.mods = q.get("mods"); // mods to switch on first (a test profile), e.g. stalker
 			return JSON.stringify(req);
 		}
+		// ---- an invite link: ?join=CODE goes straight into a friend's shared world
+		case "invitelink": // this page with ?join=CODE: the link a host sends friends
+			return window.location.origin + window.location.pathname + "?join=" + encodeURIComponent(arg);
+		case "joincode": {
+			const q = new URLSearchParams(window.location.search);
+			return q.has("join") ? q.get("join") : null;
+		}
 		// ---- a test profile without the benchmark: ?mods=stalker,corner (HybridBench.testMods)
 		case "testmods": {
 			const q = new URLSearchParams(window.location.search);

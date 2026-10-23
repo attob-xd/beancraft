@@ -1,9 +1,9 @@
 {
- "build": "1792729040",
- "date": "October 22, 2026",
+ "build": "1792757236",
+ "date": "October 23, 2026",
  "notes": [
-  "New mod: Cave Dweller (Mods > Converted - off until you turn it on). Deep in the caves, in the dark, you hear it moving. It only shows itself where you are not looking - and when you see it, it decides: it stares and creeps closer while you look away, it runs, or it comes for you, faster than you can run.",
-  "It is the Better Cave Dweller mod by Cadentem (MIT): its model, animations and sounds, with its behaviour ported from its code. Works in singleplayer and on the server.",
-  "Invisible horror creatures no longer cast a shadow that gave them away."
+  "Invite friends to your world: in a singleplayer world, press Escape and click Invite Friends, then Get Invite Code. The code is copied for you, and there is an invite link in chat.",
+  "Your friend enters the code in Multiplayer > Join with Code, or just opens the link. They join your world - and the mods you have on (guns, horror mods and the rest) are turned on for them too.",
+  "The Cave Dweller now comes up in the caves you are in, not in a pocket above or below you."
  ]
 }
