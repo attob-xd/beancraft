@@ -1,8 +1,8 @@
 {
- "build": "1792774921",
- "date": "October 23, 2026",
+ "build": "1793103678",
+ "date": "October 27, 2026",
  "notes": [
-  "Inviting friends is fixed. Friends now join your world through attob's relay straight away, so they no longer get stuck on \"Logging in...\" - it works on school Wi-Fi, phone data and any other network.",
-  "You can switch to another tab while friends join or play: your world keeps running for them. If your game does stop answering (closed, or the computer asleep), your friend is told so instead of waiting for ever."
+  "New skin: Enderman. Pick it in Edit Profile and you become a real enderman - the long-legged walk, glowing eyes, and a block held out in both hands the way endermen carry them. Friends playing 1.18.2 Shaders see you as an enderman too; other versions show you as Steve.",
+  "Fresh Animations: endermen's glowing eyes stay on their heads now instead of floating in front of them."
  ]
 }
