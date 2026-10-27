@@ -1,9 +1,10 @@
 {
- "build": "1793108629",
+ "build": "1793109859",
  "date": "October 27, 2026",
  "notes": [
   "New skin: Enderman. Pick it in Edit Profile and you become a real enderman - the long-legged walk, glowing eyes, and a block held out in both hands the way endermen carry them. Friends playing 1.18.2 Shaders see you as an enderman too; other versions show you as Steve.",
   "Fresh Animations: endermen's glowing eyes stay on their heads now instead of floating in front of them.",
-  "Enderman skin: a block you hold now sits in the middle, between both hands, the way a real enderman carries it - it was off to one side by the left hand."
+  "Enderman skin: a block you hold now sits in the middle, between both hands, the way a real enderman carries it - it was off to one side by the left hand.",
+  "Clicking Controls in Options no longer crashes the game."
  ]
 }
