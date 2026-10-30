@@ -16,6 +16,7 @@
     background: #4a7dff; transition: transform .15s, filter .15s; }
   a.ver.hybrid { background: #2fa36b; }
   a.ver.shaders { background: #8a55e8; }
+  a.ver.modern { background: #dc8731; }
   a.ver .tag { display: block; margin-top: 4px; font-size: 14px; font-weight: 500; letter-spacing: .08em;
     text-transform: uppercase; opacity: .85; }
   a.ver:hover, a.ver:focus { transform: translateY(-2px); filter: brightness(1.1); outline: none; }
@@ -27,6 +28,7 @@
     <a class="ver" id="classic" href="classic.html">1.12.2</a>
     <a class="ver hybrid" id="hybrid" href="hybrid/">1.18.2</a>
     <a class="ver shaders" id="shaders" href="hybrid-shaders/">1.18.2 Shaders<span class="tag">Experimental</span></a>
+    <a class="ver modern" id="modern" href="26.3/">26.3<span class="tag">New</span></a>
   </div>
 </div>
 <script>
@@ -38,6 +40,10 @@
   document.getElementById("hybrid").href = "hybrid/" + q;
   var sh = document.getElementById("shaders");
   if (sh) sh.href = "hybrid-shaders/" + q;
+  var modern = new URLSearchParams(q);
+  if (!modern.get("server")) modern.set("server", "wss://play.attob.lol/server");
+  if (!modern.get("name") && modern.get("user")) modern.set("name", modern.get("user"));
+  document.getElementById("modern").href = "26.3/?" + modern.toString();
   function showChoice() {
     document.getElementById("choice").style.display = "flex";
   }

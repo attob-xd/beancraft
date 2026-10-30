@@ -1,6 +1,7 @@
-# EaglercraftX 1.12.2 — Web Client
+# Beancraft — Web Clients
 
-Minecraft 1.12.2 in the browser, built with TeaVM (WASM-GC).
+The launch page offers Minecraft 1.12.2, 1.18.2, 1.18.2 Shaders, and 26.3.
+The 26.3 client uses Incari and joins `wss://play.attob.lol/server` by default.
 
 ## Playing
 
@@ -15,6 +16,7 @@ GitHub Pages works out of the box.
 | `bootstrap.js` | loader |
 | `assets.epw` | the client bundle (code + assets) |
 | `capes/` | sample cape images |
+| `26.3/` | Incari 26.3 client, loader, and build manifest |
 
 ## Launch options
 
@@ -23,6 +25,10 @@ Appended to the URL as query parameters:
 - `?server=ws://host:port` — join a server on load
 - `?user=NAME` — preset the username
 - `?cape=/path.png` — load a cape from a URL
+
+The launch page passes query parameters to the selected client. For 26.3,
+`?user=NAME` also sets Incari's `?name=NAME` unless `name` was supplied explicitly.
+The `cape` option applies to the older clients.
 
 ## Notes
 

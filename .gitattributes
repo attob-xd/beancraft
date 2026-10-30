@@ -1,0 +1,2 @@
+# Preserve generated client files and their manifest/content hashes on every host.
+26.3/** -text

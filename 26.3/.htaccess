@@ -1,0 +1,27 @@
+# Written by ./incari build for Apache (needs mod_headers; mod_mime and mod_deflate are standard).
+# Other servers: see README.txt.
+
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+  AddType text/javascript .js
+  AddType application/json .json
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Cross-origin isolation: lets the game share memory with its worker threads. Without these
+  # headers it still runs, a little slower.
+  Header set Cross-Origin-Opener-Policy "same-origin"
+  Header set Cross-Origin-Embedder-Policy "require-corp"
+  # The page asks for each build file with its hash (incari.wasm?v=...), so revalidating is cheap.
+  Header set Cache-Control "no-cache"
+  # Sounds are named by their hash and never change.
+  <If "%{REQUEST_URI} =~ m#/assets/objects/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/wasm text/javascript application/json text/html
+</IfModule>
+
+Options -Indexes
