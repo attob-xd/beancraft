@@ -1,13 +1,11 @@
 {
   "format": 2,
-  "id": "b224aa8723515b6f2ed20231d2c8459c7014f0a4f4c7af29071266c14a7c72b2",
+  "id": "011be8a07a47639c0b24bf1234d9edb2b88db4f85f7c9ca5164da31b2107b989",
   "game": "26.3",
-  "release": false,
+  "release": true,
   "compatible": {
     "runtime": "incari.wasm-runtime.js",
-    "module": "incari.wasm",
-    "deobfuscator": "incari.wasm-deobfuscator.wasm",
-    "debugInfo": "incari.wasm.teadbg"
+    "module": "incari.wasm"
   },
   "programs": {
     "mesher": {
@@ -19,23 +17,13 @@
   "files": [
     {
       "path": "incari.wasm-runtime.js",
-      "size": 38486,
-      "sha256": "95551a2a9ca38ed8604dbbaeb0177298c370ed657be1d6cd98ef1ebe2e8463e2"
+      "size": 17268,
+      "sha256": "4fa1e0e0d686cc6e0a0d111e606cb876f7168bd695d9e3d639e7d5684453089b"
     },
     {
       "path": "incari.wasm",
-      "size": 102510640,
-      "sha256": "15717374b535a1cc8329dce669458f1ad01a58bbd0fce5584de5b898ee591e5a"
-    },
-    {
-      "path": "incari.wasm-deobfuscator.wasm",
-      "size": 48410,
-      "sha256": "d64d18b9d003c0ced4191133fadb870be4b532f54a2de25f094bc0de61223654"
-    },
-    {
-      "path": "incari.wasm.teadbg",
-      "size": 15768251,
-      "sha256": "b7295574abf194ca8e2e61c87bd2a37707ed5bbfa31c8c1550f2853968e98d7c"
+      "size": 71585225,
+      "sha256": "43d87b71da6ccb17734830386ce6e0f907af3080fea64b35ceea8e00118e2815"
     },
     {
       "path": "mesher.wasm",
