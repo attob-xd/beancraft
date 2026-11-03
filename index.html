@@ -28,7 +28,7 @@
     <a class="ver" id="classic" href="classic.html">1.12.2</a>
     <a class="ver hybrid" id="hybrid" href="hybrid/">1.18.2</a>
     <a class="ver shaders" id="shaders" href="hybrid-shaders/">1.18.2 Shaders<span class="tag">Experimental</span></a>
-    <a class="ver modern" id="modern" href="26.3/">26.3<span class="tag">New</span></a>
+    <a class="ver modern" id="modern" href="https://rinthclient.com/">26.3<span class="tag">New</span></a>
   </div>
 </div>
 <script>
@@ -40,10 +40,7 @@
   document.getElementById("hybrid").href = "hybrid/" + q;
   var sh = document.getElementById("shaders");
   if (sh) sh.href = "hybrid-shaders/" + q;
-  var modern = new URLSearchParams(q);
-  if (!modern.get("server")) modern.set("server", "wss://play.attob.lol/server");
-  if (!modern.get("name") && modern.get("user")) modern.set("name", modern.get("user"));
-  document.getElementById("modern").href = "26.3/?" + modern.toString();
+  // 26.3 is Rinth Client on its own site: an account, instances and mods there; it joins no server by itself
   function showChoice() {
     document.getElementById("choice").style.display = "flex";
   }
