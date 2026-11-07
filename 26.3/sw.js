@@ -77,30 +77,52 @@ worker.addEventListener("message", (event) => {
 
 async function respond(request         , strategy                           )                    {
   if (strategy === "page") {
-    const cache = await caches.open(CACHES.page);
+    let response          ;
     try {
-      const response = await fetch(request, { cache: "no-cache" });
-      if (response.ok) {
-        await cache.put(request, response.clone());
-      }
-      return response;
+      response = await fetch(request, { cache: "no-cache" });
     } catch (error) {
-      const cached = await cache.match(request);
+      const cached = await lookUp(CACHES.page, request);
       if (cached !== undefined) {
         return cached;
       }
       throw error;
     }
+    if (response.ok) {
+      await store(CACHES.page, request, response.clone());
+    }
+    return response;
   }
-  const cache = await caches.open(strategy === "build" ? CACHES.build : CACHES.immutable);
-  const cached = await cache.match(request);
+  const name = strategy === "build" ? CACHES.build : CACHES.immutable;
+  const cached = await lookUp(name, request);
   if (cached !== undefined) {
     return cached;
   }
   const response = await fetch(request);
   if (response.ok) {
     // Stored while the page reads its copy: the module still compiles as it downloads.
-    void cache.put(request, response.clone());
+    void store(name, request, response.clone());
   }
   return response;
+}
+
+/** The cached copy of a request, if the cache can be read: an unreadable cache is an empty one. */
+async function lookUp(name        , request         )                                {
+  try {
+    return await (await caches.open(name)).match(request);
+  } catch (error) {
+    console.warn(`[Incari] Couldn't read the ${name} cache:`, error);
+    return undefined;
+  }
+}
+
+/**
+ * Keeps a copy, if there's room. A cache that can't take it (the origin's storage is full:
+ * QuotaExceededError) never fails the request: the response was fetched, and the page gets it.
+ */
+async function store(name        , request         , response          )                {
+  try {
+    await (await caches.open(name)).put(request, response);
+  } catch (error) {
+    console.warn(`[Incari] Couldn't keep ${request.url} for next time:`, error);
+  }
 }

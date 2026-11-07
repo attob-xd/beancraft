@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "id": "011be8a07a47639c0b24bf1234d9edb2b88db4f85f7c9ca5164da31b2107b989",
+  "id": "f9587ab817d4c330e79a17a5a26bb72331bb2ae958a450b3ad68a98a71f5279c",
   "game": "26.3",
   "release": true,
   "compatible": {
@@ -22,23 +22,23 @@
     },
     {
       "path": "incari.wasm",
-      "size": 71585225,
-      "sha256": "43d87b71da6ccb17734830386ce6e0f907af3080fea64b35ceea8e00118e2815"
+      "size": 87141101,
+      "sha256": "aa4f162d64e228db031fb0c53fbe4cf96849c9b9a1680c734936bb919e184f98"
     },
     {
       "path": "mesher.wasm",
-      "size": 133867,
-      "sha256": "2c6c5a6ee76a8e88131e8ac9857f8b49babd43f23f20911cce1d9f449ef7dcb5"
+      "size": 70946,
+      "sha256": "fa48fc6e153c6d9a21529e252bc6f8f557e1615011679e107bcea23fc66fbe2e"
     },
     {
       "path": "mesher.wasm-runtime.js",
-      "size": 38486,
-      "sha256": "95551a2a9ca38ed8604dbbaeb0177298c370ed657be1d6cd98ef1ebe2e8463e2"
+      "size": 17268,
+      "sha256": "4fa1e0e0d686cc6e0a0d111e606cb876f7168bd695d9e3d639e7d5684453089b"
     },
     {
       "path": "incari.pack",
-      "size": 1761491,
-      "sha256": "3c550127346f5cf09534775d94a068a5c7b7f29b74bc603c1e0b810f776d7ce6"
+      "size": 2366708,
+      "sha256": "94710cc358470823b7f7b7adb413fa93bf416190aedc67eb17d2d920b9e63f08"
     }
   ]
 }

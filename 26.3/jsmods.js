@@ -33,6 +33,8 @@ import { GameLink, HudCommands, parseHeader,                } from "./jsmods-cor
                       
                                                                                             
                                              
+                                                                                                              
+                                           
                         
                                                           
  
@@ -319,10 +321,6 @@ const pageMods           = {
 let panel                     = null;
 
 const STYLE = `
-#incari-mods-button { position: fixed; right: 10px; bottom: 10px; z-index: 50; opacity: .35;
-  font: 12px system-ui, sans-serif; color: #fff; background: #1c2430; border: 1px solid #3a4656;
-  border-radius: 6px; padding: 5px 9px; cursor: pointer; }
-#incari-mods-button:hover { opacity: 1; }
 #incari-mods { position: fixed; top: 12px; right: 12px; bottom: 12px; width: min(420px, calc(100vw - 24px));
   z-index: 51; overflow: auto; font: 13px/1.45 system-ui, sans-serif; color: #e8edf3; background: #141a22f2;
   border: 1px solid #3a4656; border-radius: 10px; padding: 14px 16px; box-shadow: 0 10px 40px #0008; }
@@ -507,6 +505,67 @@ async function pollBuild()                {
   }
 }
 
+let fabricBuilding = false;
+let banner                     = null;
+
+/**
+ * Mod Menu's switches: the mods are built in with every combination of them (ADR 0065), so a
+ * switch only needs the page reloaded, which this offers. Empty text takes the banner down.
+ */
+function modsBanner(text        )       {
+  if (text === "") {
+    banner?.remove();
+    banner = null;
+    return;
+  }
+  showBanner(text, true);
+}
+
+/** Follows the dev server's rebuild in the banner until it's done or failed. */
+async function followBuild()                {
+  for (;;) {
+    const response = await fabric("status");
+    const status = (await response.json())                                        ;
+    if (status.state === "building") {
+      fabricBuilding = true;
+      showBanner(`Rebuilding the game with your mods (${String(status.minutes ?? 0)} min, about 35 in all)…`);
+      await new Promise((resolve) => window.setTimeout(resolve, 5000));
+      continue;
+    }
+    if (fabricBuilding) {
+      showBanner(
+        status.state === "done" ? "Rebuilt with your mods." : "The rebuild failed: press F8 for the log.",
+        status.state === "done",
+      );
+    }
+    fabricBuilding = false;
+    return;
+  }
+}
+
+/** A line across the top in the game's own style, with a Reload button once a rebuild is done. */
+function showBanner(text        , reload = false)       {
+  if (banner === null) {
+    banner = element("div");
+    banner.style.cssText =
+      "position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:52;display:flex;gap:10px;" +
+      "align-items:center;padding:8px 12px;font:14px system-ui,sans-serif;color:#fff;" +
+      "text-shadow:2px 2px 0 #3f3f3f;background:rgba(0,0,0,.75);border:2px solid #000;";
+    document.body.append(banner);
+  }
+  const shown = banner;
+  shown.replaceChildren(element("span", text));
+  if (reload) {
+    const again = button("Reload to play", () => {
+      location.reload();
+    });
+    again.style.cssText =
+      "font:inherit;color:#fff;text-shadow:inherit;background:#6f6f6f;border:2px solid #000;" +
+      "box-shadow:inset 2px 2px 0 #a8a8a8,inset -2px -2px 0 #505050;padding:4px 10px;cursor:pointer;";
+    shown.append(again);
+  }
+}
+
 function buildPanel()              {
   const style = element("style", STYLE);
   document.head.append(style);
@@ -617,14 +676,6 @@ function buildPanel()              {
     }),
   );
   document.body.append(root);
-
-  const opener = element("button", "Mods (F8)");
-  opener.id = "incari-mods-button";
-  opener.type = "button";
-  opener.addEventListener("click", () => {
-    toggle();
-  });
-  document.body.append(opener);
   return root;
 }
 
@@ -660,6 +711,9 @@ function keepModPipeline(line        )       {
 export function installMods()       {
   page.incariMods = pageMods;
   page.incariModPipeline = keepModPipeline;
+  page.rinthModsBanner = modsBanner;
+  // A rebuild the dev server is running (the Mods panel's) is followed in the banner.
+  void followBuild().catch(() => undefined);
   for (const stored of readStore()) {
     load(stored);
   }
@@ -691,13 +745,6 @@ export function installMods()       {
     },
     true,
   );
-  // The panel's button, from the start; the panel itself is made when first opened.
-  if (document.readyState === "loading") {
-    window.addEventListener("load", () => {
-      panel ??= buildPanel();
-    });
-  } else {
-    panel ??= buildPanel();
-  }
+  // No button over the game: F8 opens the panel, which is made when first opened.
   console.log(`[Incari] JS mods: ${String(loaded.size)} saved, F8 for the Mods panel`);
 }
